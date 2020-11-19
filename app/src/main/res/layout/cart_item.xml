@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp">
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="2dp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="55dp"
+            android:layout_toEndOf="@id/productImage"
+            android:fontFamily="serif"
+            android:text="Line 1"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_alignStart="@+id/name"
+            android:layout_toEndOf="@id/productImage"
+            android:fontFamily="serif"
+            android:text="Line 2"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price"
+            android:layout_alignStart="@+id/name"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="serif"
+            android:text="Line 3"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_delete" />
+
+        <ImageView
+            android:id="@+id/decrease"
+            android:layout_width="25sp"
+            android:layout_height="25sp"
+            android:layout_alignTop="@+id/amount"
+            android:layout_marginStart="16sp"
+            android:layout_toEndOf="@+id/productImage"
+            android:src="@drawable/ic_decrease" />
+
+        <ImageView
+            android:id="@+id/increase"
+            android:layout_width="25sp"
+            android:layout_height="25sp"
+            android:layout_alignTop="@+id/amount"
+            android:layout_toEndOf="@+id/amount"
+            android:src="@drawable/ic_increase" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

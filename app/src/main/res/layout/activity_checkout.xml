@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".checkout.CheckoutActivity">
+
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/subHeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="cursive"
+        android:text="@string/shopping_cart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="28sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cartTotal"
+        android:layout_below="@+id/subHeadline"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/totalTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="serif"
+        android:text="@string/total"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/totalNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toEndOf="@id/totalTxt"
+        android:fontFamily="serif"
+        android:text="@string/zero"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/taxTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/totalTxt"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:fontFamily="serif"
+        android:text="@string/tax"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/taxNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/totalNum"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@id/taxTxt"
+        android:fontFamily="serif"
+        android:text="@string/none"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/discountTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/taxTxt"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:fontFamily="serif"
+        android:text="@string/discount"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/discountNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/taxNum"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@id/discountTxt"
+        android:fontFamily="serif"
+        android:text="@string/none"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/subtotalTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/discountTxt"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:fontFamily="serif"
+        android:text="@string/subtotal"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/subtotalNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/discountNum"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@id/subtotalTxt"
+        android:fontFamily="serif"
+        android:text="@string/zero"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/discountCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/subtotalTxt"
+        android:layout_alignBaseline="@id/removeBtn"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_toStartOf="@+id/applyBtn"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="@string/enter_code"
+        android:maxLength="6"
+        android:singleLine="true"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/applyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/subtotalTxt"
+        android:layout_alignBaseline="@id/removeBtn"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@id/removeBtn"
+        android:width="95dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:fontFamily="serif"
+        android:text="@string/apply"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/removeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/subtotalTxt"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:width="95dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:fontFamily="serif"
+        android:text="@string/remove"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/cartTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/discountCode"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="serif"
+        android:text="@string/cart_total"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/applyBtn"
+        android:layout_below="@+id/cartList"
+        android:layout_alignBaseline="@+id/cartTotal"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/cartTotal"
+        android:fontFamily="serif"
+        android:text="@string/include_tax"
+        android:textAlignment="textStart"
+        android:textSize="16sp" />
+
+
+</RelativeLayout>
